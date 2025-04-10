@@ -1,0 +1,32 @@
+{
+  "name": "payment-gateway-service",
+  "version": "1.0.0",
+  "description": "A Payment Gateway Microservice is a service responsible for processing transactions between a business and its customers. This microservice typically interacts with third-party payment providers like Stripe, PayPal, or Square to process payments, refund transactions, and handle other financial operations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/index.ts"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenbliu/Payment-Gateway-Service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenbliu/Payment-Gateway-Service/issues"
+  },
+  "homepage": "https://github.com/stevenbliu/Payment-Gateway-Service#readme",
+  "dependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.0",
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "stripe": "^18.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
