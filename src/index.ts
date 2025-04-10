@@ -1,12 +1,11 @@
 import express from 'express';
-import bodyParser from 'body-parser';
-import { createPaymentIntent } from './paymentService';
+import { createPaymentIntent } from './paymentService';  // Importing from paymentService.ts
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-// Middleware to parse JSON
-app.use(bodyParser.json());
+// Middleware to parse JSON (Express built-in middleware)
+app.use(express.json());  // Using express.json() instead of body-parser
 
 // Define API route
 app.post('/create-payment-intent', createPaymentIntent);
