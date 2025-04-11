@@ -14,9 +14,12 @@ generator client {
 }
 
 model Transaction {
-  id            String   @id @default(uuid())
-  amount        Int
-  currency      String
-  status        String
-  createdAt     DateTime @default(now())
+  id             String   @id @default(uuid())
+  amount         Int
+  currency       String
+  clientSecret   String
+  status         String   // 'succeeded' or 'failed'
+  errorMessage   String?  // optional error message for failed transactions
+  createdAt      DateTime @default(now())
 }
+
