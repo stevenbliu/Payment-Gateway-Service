@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Initialize Stripe
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2025-03-31.basil',  // Ensure this matches the version you're using
 });
 
@@ -45,7 +45,7 @@ export async function createPaymentIntent(req: Request, res: Response): Promise<
         });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Payment failed' });
+        res.status(500).json({ error: 'Payment failed', error_message: (error as Error).message });   
     }
     }
 
